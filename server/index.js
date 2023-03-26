@@ -14,7 +14,7 @@ app.options("*", cors())
 app.use(cors())
 app.use(express.json())
 
-app.use("/api", productRouter)
+app.use("/api/v1/products", productRouter)
 app.use(errorHandler)
 
 const port = process.env.PORT || 8000
