@@ -23,7 +23,7 @@ export const createProduct = async (data) => {
 
 export const updateProduct = async (id, data) => {
     const url = `/products/${id}`;
-    const method = "PUT";
+    const method = "PATCH";
     const response = await apiRequestHandler({ url, method, data });
     return response;
 }

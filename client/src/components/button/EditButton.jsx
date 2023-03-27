@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const EditButton = () => {
+const EditButton = ({ id }) => {
     return (
-        <div><button>Edit</button></div>
+        <div><Link to={`/products/${id}`}><button>Edit</button></Link></div >
     )
 }
 
