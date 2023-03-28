@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useId } from 'react'
 import { createProduct } from '../../handler/api'
 import ProductForm from "../forms/AddProductForm"
-import { v4 as uuidv4 } from "uuid";
+
 
 const AddProduct = ({ setLoading }) => {
-    const [id] = useState(uuidv4());
+    const id = useId();
     const [productName, setProductName] = useState('')
     const [scrumMaster, setScrumMaster] = useState('')
     const [productOwner, setProductOwner] = useState('')
