@@ -3,14 +3,13 @@ import { updateProduct } from '../../handler/api'
 import ProductForm from "../forms/ProductForm"
 
 const EditProduct = () => {
-    const [id, setId] = useState('')
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        updateProduct({ id, name, price, description })
+        updateProduct({ name, price, description })
             .then(res => {
                 console.log(res)
             })
@@ -20,7 +19,7 @@ const EditProduct = () => {
     return (
         <div>
             <ProductForm
-                setId={setId}
+
                 setName={setName}
                 setPrice={setPrice}
                 setDescription={setDescription}

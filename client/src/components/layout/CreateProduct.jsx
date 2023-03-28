@@ -3,7 +3,6 @@ import { createProduct } from '../../handler/api'
 import ProductForm from "../forms/ProductForm"
 
 const CreateProduct = ({ setLoading }) => {
-    const [id, setID] = useState('')
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
@@ -11,7 +10,7 @@ const CreateProduct = ({ setLoading }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setLoading(true)
-        createProduct({ id, name, price, description })
+        createProduct({ name, price, description })
             .then(res => {
                 setLoading(false)
                 console.log(res)
@@ -25,7 +24,6 @@ const CreateProduct = ({ setLoading }) => {
                 setName={setName}
                 setPrice={setPrice}
                 setDescription={setDescription}
-                setId={setID}
                 handleSubmit={handleSubmit}
             />
         </div>

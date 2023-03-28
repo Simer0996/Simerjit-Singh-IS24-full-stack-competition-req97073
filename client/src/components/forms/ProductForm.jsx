@@ -1,14 +1,11 @@
 import React from 'react'
 
-const ProductForm = ({ setName, setPrice, setDescription, setId, handleSubmit }) => {
+const ProductForm = ({ setName, setPrice, setDescription, handleSubmit }) => {
     return (
         <div>
             Add a Product
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="productid">Name</label>
-                    <input type="number" className="form-control" id="productid" placeholder="Enter ID" onChange={(e) => setId(e.target.value)} />
-                </div>
+
                 <div className="form-group">
                     <label htmlFor="name">Description</label>
                     <input type="text" className="form-control" id="name" placeholder="Enter name of the product" onChange={(e) => setName(e.target.value)} />
