@@ -1,16 +1,23 @@
 import React, { useState } from 'react'
 import { createProduct } from '../../handler/api'
-import ProductForm from "../forms/ProductForm"
+import ProductForm from "../forms/AddProduct"
+import { v4 as uuidv4 } from "uuid";
 
 const CreateProduct = ({ setLoading }) => {
-    const [name, setName] = useState('')
-    const [price, setPrice] = useState('')
-    const [description, setDescription] = useState('')
+    const [id] = useState(uuidv4());
+    const [productName, setProductName] = useState('')
+    const [scrumMaster, setScrumMaster] = useState('')
+    const [productOwner, setProductOwner] = useState('')
+    const [developers, setDevelopers] = useState([])
+    const [startDate, setStartDate] = useState('')
+    const [methodology, setMethodology] = useState('')
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setLoading(true)
-        createProduct({ name, price, description })
+        createProduct({ id, productName, scrumMaster, productOwner, developers, startDate, methodology })
             .then(res => {
                 setLoading(false)
                 console.log(res)
@@ -21,9 +28,12 @@ const CreateProduct = ({ setLoading }) => {
     return (
         <div>
             <ProductForm
-                setName={setName}
-                setPrice={setPrice}
-                setDescription={setDescription}
+                setProductName={setProductName}
+                setScrumMaster={setScrumMaster}
+                setProductOwner={setProductOwner}
+                setDevelopers={setDevelopers}
+                setStartDate={setStartDate}
+                setMethodology={setMethodology}
                 handleSubmit={handleSubmit}
             />
         </div>

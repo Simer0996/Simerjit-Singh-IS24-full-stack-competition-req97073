@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { updateProduct } from '../../handler/api'
-import ProductForm from "../forms/ProductForm"
+import ProductForm from "../forms/AddProduct"
 
 const EditProduct = () => {
     const [name, setName] = useState('')
