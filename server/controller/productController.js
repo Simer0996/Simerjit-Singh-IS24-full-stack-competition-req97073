@@ -34,7 +34,6 @@ const getProductById = async (req, res, next) => {
     }
 }
 
-
 const editProduct = async (req, res, next) => {
     try {
         const product = mockdata.find(p => p.id === parseInt(req.params.id))
