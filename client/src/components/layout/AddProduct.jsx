@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { createProduct } from '../../handler/api'
-import ProductForm from "../forms/AddProduct"
+import ProductForm from "../forms/AddProductForm"
 import { v4 as uuidv4 } from "uuid";
 
-const CreateProduct = ({ setLoading }) => {
+const AddProduct = ({ setLoading }) => {
     const [id] = useState(uuidv4());
     const [productName, setProductName] = useState('')
     const [scrumMaster, setScrumMaster] = useState('')
@@ -11,7 +11,6 @@ const CreateProduct = ({ setLoading }) => {
     const [developers, setDevelopers] = useState([])
     const [startDate, setStartDate] = useState('')
     const [methodology, setMethodology] = useState('')
-
 
 
     const handleSubmit = (e) => {
@@ -40,4 +39,4 @@ const CreateProduct = ({ setLoading }) => {
     )
 }
 
-export default CreateProduct
+export default AddProduct

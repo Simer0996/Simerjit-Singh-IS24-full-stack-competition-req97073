@@ -1,6 +1,6 @@
 import { useState } from "react"
 import AllProducts from "../components/layout/AllProducts"
-import CreateProduct from "../components/layout/CreateProduct"
+import AddProduct from "../components/layout/AddProduct"
 
 
 
@@ -11,8 +11,7 @@ const Home = () => {
     return (
         <div>
             <AllProducts loading={loading} setLoading={setLoading} />
-            <CreateProduct loading={loading} setLoading={setLoading} />
-
+            <AddProduct loading={loading} setLoading={setLoading} />
         </div>
     )
 }

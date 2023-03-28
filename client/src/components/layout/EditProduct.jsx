@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { updateProduct } from '../../handler/api'
-import ProductForm from "../forms/AddProduct"
+import EditProductForm from "../forms/EditProductForm"
 
 const EditProduct = () => {
-    const [name, setName] = useState('')
-    const [price, setPrice] = useState('')
-    const [description, setDescription] = useState('')
+    const [productName, setProductName] = useState('')
+    const [scrumMaster, setScrumMaster] = useState('')
+    const [productOwner, setProductOwner] = useState('')
+    const [developers, setDevelopers] = useState([])
+    const [methodology, setMethodology] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        updateProduct({ name, price, description })
+        updateProduct({ productName, scrumMaster, productOwner, developers, methodology })
             .then(res => {
                 console.log(res)
             })
@@ -18,14 +20,14 @@ const EditProduct = () => {
 
     return (
         <div>
-            <ProductForm
-
-                setName={setName}
-                setPrice={setPrice}
-                setDescription={setDescription}
+            <EditProductForm
+                setProductName={setProductName}
+                setScrumMaster={setScrumMaster}
+                setProductOwner={setProductOwner}
+                setDevelopers={setDevelopers}
+                setMethodology={setMethodology}
                 handleSubmit={handleSubmit}
             />
-
         </div>
     )
 }

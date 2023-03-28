@@ -1,8 +1,20 @@
 import React from 'react'
+import { deleteProduct } from '../../handler/api'
 
-const DeleteButton = () => {
+const DeleteButton = ({ id }) => {
+
+    const handleDelete = () => {
+        deleteProduct(id)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => console.log(err))
+    }
+
+
     return (
-        <div><button>Delete</button></div>
+
+        <div><button onClick={handleDelete}>Delete</button></div>
     )
 }
 

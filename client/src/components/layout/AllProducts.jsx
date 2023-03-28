@@ -23,12 +23,15 @@ const AllProducts = ({ loading, setLoading }) => {
 
     return (
         <div>{loading ? <h1>Loading...</h1> : products.map(product => (
-            <div key={product.id} className="w-full flex-1">
-                <h1>{product.name}</h1>
-                <h2>{product.price}</h2>
-                <h3>{product.description}</h3>
-                <EditButton id={product.id} />
+            <div key={product.id}>
+                <p>{product.productName}</p>
+                <p>{product.scrumMaster}</p>
+                <p>{product.productOwner}</p>
+                <p>{product.developers}</p>
+                <p>{product.startDate}</p>
+                <p>{product.methodology}</p>
                 <DeleteButton id={product.id} />
+                <EditButton id={product.id} />
             </div>
         ))}</div>
     )
