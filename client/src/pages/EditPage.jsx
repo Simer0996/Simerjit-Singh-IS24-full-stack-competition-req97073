@@ -1,9 +1,9 @@
 import React from 'react'
 import EditProduct from '../components/layout/EditProduct'
-const EditPage = () => {
+const EditPage = ({ extractId }) => {
     return (
         <div>
-            <EditProduct />
+            <EditProduct extractId={extractId} />
         </div>
     )
 }

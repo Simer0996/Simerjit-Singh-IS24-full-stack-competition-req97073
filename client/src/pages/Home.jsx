@@ -3,7 +3,6 @@ import AllProducts from "../components/layout/AllProducts"
 import AddProduct from "../components/layout/AddProduct"
 
 const Home = () => {
-
     const [loading, setLoading] = useState(true)
 
     return (

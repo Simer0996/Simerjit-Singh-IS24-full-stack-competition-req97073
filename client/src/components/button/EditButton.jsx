@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const EditButton = ({ id }) => {
 
     return (
-        <div><Link to={`/products/${id}`}><button>Edit</button></Link></div >
+        <button><Link to={`products/${id}`}>Edit</Link></button >
     )
 }
 

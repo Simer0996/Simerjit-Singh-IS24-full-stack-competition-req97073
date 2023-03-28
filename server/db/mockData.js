@@ -1,6 +1,6 @@
 const data = [
     {
-        id: 1,
+        id: "1",
         productName: "FoodApp",
         productOwnerName: "Leo",
         Developers: [
@@ -14,7 +14,7 @@ const data = [
         startDate: "2022/08/12",
         methodology: "Agile",
     }, {
-        id: 2,
+        id: "2",
         productName: "FoodApp",
         productOwnerName: "Leo",
         Developers: [

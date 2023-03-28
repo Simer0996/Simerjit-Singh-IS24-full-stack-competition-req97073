@@ -23,7 +23,7 @@ const getProducts = async (req, res, next) => {
 
 const getProductById = async (req, res, next) => {
     try {
-        const product = mockdata.find(p => p.id === parseInt(req.params.id))
+        const product = mockdata.find(p => p.id === (req.params.id))
         if (product) {
             res.status(200).json(product)
         } else {
@@ -36,7 +36,7 @@ const getProductById = async (req, res, next) => {
 
 const editProduct = async (req, res, next) => {
     try {
-        const product = mockdata.find(p => p.id === parseInt(req.params.id))
+        const product = mockdata.find(p => p.id === (req.params.id))
         if (product) {
             product.productName = req.body.productName
             product.productOwnerName = req.body.productOwnerName
@@ -55,7 +55,7 @@ const editProduct = async (req, res, next) => {
 
 const deleteProduct = async (req, res, next) => {
     try {
-        const product = mockdata.find(p => p.id === parseInt(req.params.id))
+        const product = mockdata.find(p => p.id === (req.params.id))
         if (product) {
             const index = mockdata.indexOf(product)
             mockdata.splice(index, 1)

@@ -8,15 +8,12 @@ const AllProducts = ({ loading, setLoading }) => {
 
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            getProducts()
-                .then(res => {
-                    setProducts(res)
-                    setLoading(false)
-                })
-                .catch(err => console.log(err))
-        }, 1000);
-        return () => clearInterval(interval);
+        getProducts()
+            .then(res => {
+                setProducts(res)
+                setLoading(false)
+            })
+            .catch(err => console.log(err))
     }, [setLoading])
 
 
