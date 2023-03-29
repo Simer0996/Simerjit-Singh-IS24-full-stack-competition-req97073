@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal';
-import EditProduct from '../forms/EditProductForm';
+import EditProduct from '../layout/EditProduct';
 
 const EditButton = ({ id }) => {
     const [modalIsOpen, setIsOpen] = useState(false);

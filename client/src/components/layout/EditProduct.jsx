@@ -11,7 +11,8 @@ const EditProduct = ({ id }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        updateProduct({ id, productName, scrumMaster, productOwner, developers, methodology })
+        console.log(id)
+        updateProduct(id, { productName, scrumMaster, productOwner, developers, methodology })
             .then(res => {
                 console.log(res)
             })
