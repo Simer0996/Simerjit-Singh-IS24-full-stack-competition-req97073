@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddProduct = ({ setProductName,
+const EditProductForm = ({ setProductName,
     setScrumMaster,
     setProductOwner,
     setDevelopers,
@@ -40,4 +40,4 @@ const AddProduct = ({ setProductName,
     )
 }
 
-export default AddProduct
+export default EditProductForm

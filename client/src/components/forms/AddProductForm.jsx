@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddProduct = ({ setProductName,
+const AddProductForm = ({ setProductName,
     setScrumMaster,
     setProductOwner,
     setDevelopers,
@@ -10,7 +10,8 @@ const AddProduct = ({ setProductName,
 
     return (
         <div>
-            Add a Product
+            <h1>Add a Product</h1>
+
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="productName">Product Name</label>
@@ -45,4 +46,4 @@ const AddProduct = ({ setProductName,
     )
 }
 
-export default AddProduct
+export default AddProductForm

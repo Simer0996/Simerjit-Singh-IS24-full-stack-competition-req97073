@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { createProduct } from '../../handler/api'
-import ProductForm from "../forms/AddProductForm"
+import AddProductForm from "../forms/AddProductForm"
 import { v4 as uuidv4 } from "uuid";
 
 const AddProduct = ({ setLoading }) => {
@@ -27,7 +27,7 @@ const AddProduct = ({ setLoading }) => {
 
     return (
         <div>
-            <ProductForm
+            <AddProductForm
                 setProductName={setProductName}
                 setScrumMaster={setScrumMaster}
                 setProductOwner={setProductOwner}

@@ -1,51 +1,6 @@
 const mockdata = require('../db/mockData')
 
 
-/** 
- * @swagger
- * components:
- *  schemas:
- *     Product:
- *      type: object
- *     required:
- *     - productName
- *    - productOwnerName
- *   - Developers
- * - scrumMasterName
- * - startDate
- * - methodology
- * properties:
- *  id:
- *  type: string
- * description: The auto-generated id of the product
- * productName:
- * type: string
- * description: The name of the product
- * productOwnerName:
- * type: string
- * description: The name of the product owner
- * Developers:
- * type: array
- * description: The names of the developers
- * scrumMasterName:
- * type: string
- * description: The name of the scrum master
- * startDate:
- * type: string
- * description: The start date of the project
- * methodology:
- * type: string
- * description: The methodology of the project
- * example:
- * id: 1
- *  productName: FoodApp
- * productOwnerName: Leo
- * Developers: Lee, Singh, Simer, Olivia, Bruna
- * scrumMasterName: Emma
- * startDate: 2022/08/12
- * methodology: Agile
- */
-
 const postProduct = async (req, res, next) => {
     try {
         const product = req.body

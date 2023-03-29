@@ -1,15 +1,31 @@
-import { useState } from "react"
-import AllProducts from "../components/layout/AllProducts"
-import AddProduct from "../components/layout/AddProduct"
+import React, { useEffect, useState } from 'react'
+import { getProducts } from '../handler/api'
+import AllProducts from '../components/table/AllProducts'
+
 
 const Home = () => {
-    const [loading, setLoading] = useState(true)
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            getProducts()
+                .then(res => {
+                    setData(res)
+                    setLoading(false)
+                })
+                .catch(err => console.log(err))
+        }, 1000);
+        return () => clearInterval(interval);
+
+    }, [])
 
     return (
         <div>
-            <AllProducts loading={loading} setLoading={setLoading} />
-            <AddProduct loading={loading} setLoading={setLoading} />
+            <h1 className="text-3xl">Track the projects associated with the Government of British columbia</h1>
+            <AllProducts loading={loading} data={data} />
         </div>
+
     )
 }
 

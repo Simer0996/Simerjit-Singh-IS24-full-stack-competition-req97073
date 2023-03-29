@@ -4,6 +4,7 @@ import { deleteProduct } from '../../handler/api'
 const DeleteButton = ({ id }) => {
 
     const handleDelete = () => {
+        console.log(id)
         deleteProduct(id)
             .then(res => {
                 console.log(res)
@@ -14,7 +15,7 @@ const DeleteButton = ({ id }) => {
 
     return (
 
-        <div><button onClick={handleDelete}>Delete</button></div>
+        <div className="p-1"><button className="cursor-pointer text-sm bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded" onClick={handleDelete}>Delete</button></div>
     )
 }
 
