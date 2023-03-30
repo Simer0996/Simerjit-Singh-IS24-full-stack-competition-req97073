@@ -4,15 +4,15 @@ import EditProductForm from "../forms/EditProductForm"
 
 const EditProduct = ({ id }) => {
     const [productName, setProductName] = useState('')
-    const [scrumMaster, setScrumMaster] = useState('')
-    const [productOwner, setProductOwner] = useState('')
+    const [scrumMasterName, setScrumMasterName] = useState('')
+    const [productOwnerName, setProductOwnerName] = useState('')
     const [developers, setDevelopers] = useState([])
     const [methodology, setMethodology] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(id)
-        updateProduct(id, { productName, scrumMaster, productOwner, developers, methodology })
+        updateProduct(id, { productName, scrumMasterName, productOwnerName, developers, methodology })
             .then(res => {
                 console.log(res)
             })
@@ -23,8 +23,8 @@ const EditProduct = ({ id }) => {
         <div>
             <EditProductForm
                 setProductName={setProductName}
-                setScrumMaster={setScrumMaster}
-                setProductOwner={setProductOwner}
+                setScrumMasterName={setScrumMasterName}
+                setProductOwnerName={setProductOwnerName}
                 setDevelopers={setDevelopers}
                 setMethodology={setMethodology}
                 handleSubmit={handleSubmit}

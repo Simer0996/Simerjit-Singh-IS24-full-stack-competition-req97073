@@ -1,8 +1,8 @@
 import React from 'react'
 
 const EditProductForm = ({ setProductName,
-    setScrumMaster,
-    setProductOwner,
+    setScrumMasterName,
+    setProductOwnerName,
     setDevelopers,
     setMethodology,
     handleSubmit }) => {
@@ -17,7 +17,7 @@ const EditProductForm = ({ setProductName,
                 </div>
                 <div className="form-group">
                     <label htmlFor="productOwnerName">Product Name</label>
-                    <input type="text" className="form-control" id="productOwnerName" placeholder="Enter the product Owner" onChange={(e) => setProductOwner(e.target.value)} />
+                    <input type="text" className="form-control" id="productOwnerName" placeholder="Enter the product Owner" onChange={(e) => setProductOwnerName(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="Developers">Developers</label>
@@ -25,7 +25,7 @@ const EditProductForm = ({ setProductName,
                 </div>
                 <div className="form-group">
                     <label htmlFor="scrumMasterName">Scrum master Name</label>
-                    <input type="text" className="form-control" id="scrumMasterName" placeholder="Enter the name of Scrum Master" onChange={(e) => setScrumMaster(e.target.value)} />
+                    <input type="text" className="form-control" id="scrumMasterName" placeholder="Enter the name of Scrum Master" onChange={(e) => setScrumMasterName(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="methodology">Methodology</label>
