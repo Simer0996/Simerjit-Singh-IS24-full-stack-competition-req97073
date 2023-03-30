@@ -1,6 +1,6 @@
 const mockdata = require('../db/mockData')
 
-
+//Route function when a user wants to add a new product
 const postProduct = async (req, res, next) => {
     try {
         const product = req.body

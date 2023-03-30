@@ -1,3 +1,5 @@
+//Schema for the mock data in the database documented on Swagger documentation route
+
 /**
  * @openapi
  * components:
@@ -53,7 +55,7 @@
  *          type: string
  */
 
-
+//Custom mock data for the database
 const data = [
     {
         id: "1",

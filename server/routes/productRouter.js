@@ -8,6 +8,7 @@ const {
     deleteProduct
 } = require('../controller/productController.js');
 
+//Route function when a user wants to get all products initiated with Swagger for documentation 
 /**
  * @openapi
  * /api/products:
@@ -33,6 +34,7 @@ const {
 
 router.get('/', getProducts);
 
+//Route function when a user wants to add a product initiated with Swagger for documentation 
 /**
  * @openapi
  * /api/products:
@@ -49,6 +51,8 @@ router.get('/', getProducts);
  */
 
 router.post('/', postProduct);
+
+//Route function when a user wants to get a specific product initiated with Swagger for documentation 
 /**
  * @openapi
  * /api/products/{id}:
@@ -92,6 +96,7 @@ router.post('/', postProduct);
  */
 router.get('/:id', getProductById);
 
+//Route function when a user wants to edit a specific product initiated with Swagger for documentation 
 /**
  * @openapi
  * /api/products/{id}}:
@@ -117,6 +122,8 @@ router.get('/:id', getProductById);
 
 router.patch('/:id', editProduct);
 
+
+//Route function when a user wants to delete a specific product initiated with Swagger for documentation 
 /**
  * @openapi
  * /api/products/{id}:
