@@ -38,7 +38,6 @@ const Home = () => {
         }
     }
 
-
     const handleSearchByDeveloperName = (e) => {
         if (e.key === 'Enter') {
             if (searchByDeveloper === '' || searchByDeveloper === null || searchByDeveloper === undefined || searchByDeveloper.length <= 2) {
@@ -52,7 +51,6 @@ const Home = () => {
             }
         }
     }
-
 
     return (
         <div>
