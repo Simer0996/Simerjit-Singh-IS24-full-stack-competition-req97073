@@ -10,7 +10,7 @@ const AddProduct = () => {
     const [productOwnerName, setProductOwnerName] = useState('')
     const [developers, setDevelopers] = useState([""])
     const [startDate, setStartDate] = useState('')
-    const [methodology, setMethodology] = useState('agile')
+    const [methodology, setMethodology] = useState('Agile')
 
     const handleChange = (e) => {
         const value = e.target.value;

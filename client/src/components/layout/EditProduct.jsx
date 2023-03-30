@@ -7,7 +7,7 @@ const EditProduct = ({ id }) => {
     const [scrumMasterName, setScrumMasterName] = useState('')
     const [productOwnerName, setProductOwnerName] = useState('')
     const [developers, setDevelopers] = useState([])
-    const [methodology, setMethodology] = useState('')
+    const [methodology, setMethodology] = useState('Agile')
 
     const handleChange = (e) => {
         const value = e.target.value;
