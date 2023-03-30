@@ -59,7 +59,7 @@ const data = [
         id: "1",
         productName: "FoodApp",
         productOwnerName: "Leo",
-        Developers: [
+        developers: [
             "Lee",
             "Singh",
             "Simer",
@@ -73,7 +73,7 @@ const data = [
         id: "2",
         productName: "FoodApp",
         productOwnerName: "Leo",
-        Developers: [
+        developers: [
             "Lee",
             "Singh",
             "Simer",

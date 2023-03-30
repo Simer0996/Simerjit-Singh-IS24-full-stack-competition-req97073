@@ -3,23 +3,25 @@ import { createProduct } from '../../handler/api'
 import AddProductForm from "../forms/AddProductForm"
 import { v4 as uuidv4 } from "uuid";
 
-const AddProduct = ({ setLoading }) => {
+const AddProduct = () => {
 
     const [productName, setProductName] = useState('')
-    const [scrumMaster, setScrumMaster] = useState('')
-    const [productOwner, setProductOwner] = useState('')
-    const [developers, setDevelopers] = useState([])
+    const [scrumMasterName, setScrumMasterName] = useState('')
+    const [productOwnerName, setProductOwnerName] = useState('')
+    const [developers, setDevelopers] = useState([""])
     const [startDate, setStartDate] = useState('')
     const [methodology, setMethodology] = useState('agile')
 
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setDevelopers(value.split(","));
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const id = uuidv4();
-        setLoading(true)
-        createProduct({ id, productName, scrumMaster, productOwner, developers, startDate, methodology })
+        createProduct({ id, productName, scrumMasterName, productOwnerName, developers, startDate, methodology })
             .then(res => {
-                setLoading(false)
                 console.log(res)
             })
             .catch(err => console.log(err))
@@ -29,9 +31,9 @@ const AddProduct = ({ setLoading }) => {
         <div>
             <AddProductForm
                 setProductName={setProductName}
-                setScrumMaster={setScrumMaster}
-                setProductOwner={setProductOwner}
-                setDevelopers={setDevelopers}
+                setScrumMasterName={setScrumMasterName}
+                setProductOwnerName={setProductOwnerName}
+                handleChange={handleChange}
                 setStartDate={setStartDate}
                 setMethodology={setMethodology}
                 handleSubmit={handleSubmit}

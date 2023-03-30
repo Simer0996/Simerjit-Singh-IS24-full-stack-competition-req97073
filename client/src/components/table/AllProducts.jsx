@@ -26,7 +26,7 @@ const AllProducts = ({ data }) => {
                             <td className="border px-6 py-2">{index + 1}</td>
                             <td className="border px-6 py-2">{item.productName}</td>
                             <td className="border px-6 py-2">{item.productOwnerName}</td>
-                            <td className="border px-6 py-2">{item.Developers.map(developer => (
+                            <td className="border px-6 py-2">{item.developers.map(developer => (
                                 <div className="flex">{developer}</div>
                             ))}</td>
                             <td className="border px-6 py-2">{item.scrumMasterName}</td>
