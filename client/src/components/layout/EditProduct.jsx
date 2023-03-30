@@ -9,6 +9,11 @@ const EditProduct = ({ id }) => {
     const [developers, setDevelopers] = useState([])
     const [methodology, setMethodology] = useState('')
 
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setDevelopers(value.split(","));
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(id)
@@ -28,6 +33,7 @@ const EditProduct = ({ id }) => {
                 setDevelopers={setDevelopers}
                 setMethodology={setMethodology}
                 handleSubmit={handleSubmit}
+                handleChange={handleChange}
             />
         </div>
     )

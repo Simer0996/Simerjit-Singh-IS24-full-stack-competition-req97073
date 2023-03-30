@@ -3,9 +3,9 @@ import React from 'react'
 const EditProductForm = ({ setProductName,
     setScrumMasterName,
     setProductOwnerName,
-    setDevelopers,
     setMethodology,
-    handleSubmit }) => {
+    handleSubmit,
+    handleChange }) => {
 
     return (
         <div>
@@ -16,12 +16,12 @@ const EditProductForm = ({ setProductName,
                     <input type="text" className="form-control" id="productName" placeholder="Enter name of the product" onChange={(e) => setProductName(e.target.value)} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="productOwnerName">Product Name</label>
+                    <label htmlFor="productOwnerName">Product Owner</label>
                     <input type="text" className="form-control" id="productOwnerName" placeholder="Enter the product Owner" onChange={(e) => setProductOwnerName(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="Developers">Developers</label>
-                    <input type="text" className="form-control" id="Developers" placeholder="Enter name of the Developers" onChange={(e) => setDevelopers(e.target.value)} />
+                    <input type="text" className="form-control" id="Developers" placeholder="Enter name of the Developers" onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="scrumMasterName">Scrum master Name</label>
@@ -30,8 +30,8 @@ const EditProductForm = ({ setProductName,
                 <div className="form-group">
                     <label htmlFor="methodology">Methodology</label>
                     <select id="favColor" onChange={(e) => setMethodology(e.target.value)}>
-                        <option value="agile">Agile</option>
-                        <option value="waterFall">Waterfall</option>
+                        <option value="Agile">Agile</option>
+                        <option value="WaterFall">Waterfall</option>
                     </select>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
