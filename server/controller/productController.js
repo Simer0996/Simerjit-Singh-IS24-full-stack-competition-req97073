@@ -43,7 +43,6 @@ const editProduct = async (req, res, next) => {
             product.productOwnerName = req.body.productOwnerName
             product.developers = req.body.developers
             product.scrumMasterName = req.body.scrumMasterName
-            product.startDate = req.body.startDate
             product.methodology = req.body.methodology
             res.status(200).json(product)
         } else {

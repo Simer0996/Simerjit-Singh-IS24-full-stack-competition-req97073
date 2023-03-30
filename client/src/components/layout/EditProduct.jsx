@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { updateProduct } from '../../handler/api'
 import EditProductForm from "../forms/EditProductForm"
 
-const EditProduct = ({ id }) => {
+const EditProduct = ({ id, data }) => {
     const [productName, setProductName] = useState('')
     const [scrumMasterName, setScrumMasterName] = useState('')
     const [productOwnerName, setProductOwnerName] = useState('')
@@ -16,7 +16,6 @@ const EditProduct = ({ id }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(id)
         updateProduct(id, { productName, scrumMasterName, productOwnerName, developers, methodology })
             .then(res => {
                 console.log(res)
