@@ -12,7 +12,7 @@ const postProduct = async (req, res, next) => {
     }
 }
 
-
+//Route function when a user wants to get all products
 const getProducts = async (req, res, next) => {
     try {
         const data = await mockdata
@@ -22,6 +22,7 @@ const getProducts = async (req, res, next) => {
     }
 }
 
+//Route function when a user wants to get a specific product
 const getProductById = async (req, res, next) => {
     try {
         const product = mockdata.find(p => p.id === (req.params.id))
@@ -35,6 +36,7 @@ const getProductById = async (req, res, next) => {
     }
 }
 
+//Route function when a user wants to edit a specific product
 const editProduct = async (req, res, next) => {
     try {
         const product = mockdata.find(p => p.id === (req.params.id))
@@ -53,6 +55,7 @@ const editProduct = async (req, res, next) => {
     }
 }
 
+//Route function when a user wants to delete a specific product
 const deleteProduct = async (req, res, next) => {
     try {
         const product = mockdata.find(p => p.id === (req.params.id))

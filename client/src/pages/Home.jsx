@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getProducts } from '../handler/api'
 import AllProducts from '../components/table/AllProducts'
 import AddProductButton from '../components/button/AddProductButton'
+import PrimaryNav from '../components/navigation/PrimaryNav'
 
 
 const Home = () => {
@@ -52,11 +53,47 @@ const Home = () => {
         }
     }
 
+    const handleOnclickScrumName = () => {
+        if (searchByName === '' || searchByName === null || searchByName === undefined || searchByName.length <= 2) {
+            api.filter(result => { return result }
+            )
+        } else {
+            const data = api.filter(result => {
+                return result
+                    .scrumMasterName.toLowerCase().includes(searchByName?.toLowerCase())
+            }
+            )
+            setFilteredData(data)
+        }
+    }
+
+    const handleOnclickDeveloperName = () => {
+        if (searchByDeveloper === '' || searchByDeveloper === null || searchByDeveloper === undefined || searchByDeveloper.length <= 2) {
+            api.filter(result => { return result }
+            )
+        } else {
+            const data = api.filter(result =>
+                result.developers?.some(developer => developer.toLowerCase().includes(searchByDeveloper?.toLowerCase()))
+            )
+            setFilteredData(data)
+        }
+    }
+
+
     return (
         <div>
-            <h1 className="text-3xl">Track the projects associated with the Government of British columbia</h1>
-            <input type="text" className="w-full" placeholder="Search by Scrum master" onChange={(e) => setSearchByName(e.target.value)} onKeyDown={handleSearchByScrumName} />
-            <input type="text" className="w-full" placeholder="Search by developer" onChange={(e) => setSearchByDeveloper(e.target.value)} onKeyDown={handleSearchByDeveloperName} />
+            <div>
+                <PrimaryNav />
+            </div>
+            <h1 className="text-4xl text-center p-5">Track Progress </h1>
+            <div className="flex justify-center">
+                <input type="text" className="w-[70%] p-2" placeholder="Search by Scrum master" onChange={(e) => setSearchByName(e.target.value)} onKeyDown={handleSearchByScrumName} />
+                <button onClick={handleOnclickScrumName} className=" bg-blue-500 hover:bg-blue-700 text-white font-bold rounded px-4">Search</button>
+            </div>
+            <div className="flex justify-center mt-3">
+                <input type="text" className="w-[70%] p-2" placeholder="Search by developer" onChange={(e) => setSearchByDeveloper(e.target.value)} onKeyDown={handleSearchByDeveloperName} />
+                <button onClick={handleOnclickDeveloperName} className=" bg-blue-500 hover:bg-blue-700 text-white font-bold rounded px-4">Search</button>
+            </div>
             <AddProductButton />
             <table className="shadow-lg bg-white w-full">
                 <thead>
