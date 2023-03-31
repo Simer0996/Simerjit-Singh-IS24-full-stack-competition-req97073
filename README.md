@@ -52,6 +52,8 @@ http://localhost:8000/api/api-docs
 ## How to use the application
  How to use the application
  This is the basic web application which helps to track the details of products/or specific product 
+
+ 
     1. Adding a Product : 
 
         In the home page of the app, the details of all products is given such as Product Name, Product Owner, Developers involved in the product, Scrum master Name, Start date of the project, and the type of methodology the product followed.
