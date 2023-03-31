@@ -32,7 +32,8 @@ const AddProductButton = () => {
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
-                contentLabel="Example Modal"
+                contentLabel="Add a Product"
+                ariaHideApp={false}
             >
                 <AddProduct />
             </Modal>

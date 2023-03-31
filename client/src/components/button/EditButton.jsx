@@ -31,7 +31,8 @@ const EditButton = ({ id }) => {
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
-                contentLabel="Example Modal"
+                contentLabel="Edit Product"
+                ariaHideApp={false}
             >
                 <EditProduct id={id} />
             </Modal>
