@@ -4,7 +4,6 @@ import { deleteProduct } from '../../handler/api'
 const DeleteButton = ({ id }) => {
 
     const handleDelete = () => {
-        console.log(id)
         deleteProduct(id)
             .then(res => {
                 console.log(res)

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { getProducts } from '../handler/api'
 import AllProducts from '../components/table/AllProducts'
 import AddProductButton from '../components/button/AddProductButton'
@@ -10,6 +12,26 @@ const Home = () => {
     const [searchByName, setSearchByName] = useState();
     const [searchByDeveloper, setSearchByDeveloper] = useState();
     const [filteredData, setFilteredData] = useState([]);
+
+    const addProductToast = () => toast.success("Product added successfully!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+
+    const productUpdatedToast = () => toast.success("Product updated successfully!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -25,59 +47,51 @@ const Home = () => {
     const handleSearchByScrumName = (e) => {
         if (e.key === 'Enter') {
             if (!searchByName) {
-                api.filter(result => { return result }
-                )
-            } else {
-                const data = api?.filter((value) => {
-                    return value.scrumMasterName.toLowerCase().includes(searchByName?.toLowerCase())
-                }
-                )
-                setFilteredData(data)
+                return api
             }
+            const data = api?.filter((value) => {
+                return value.scrumMasterName.toLowerCase().includes(searchByName?.toLowerCase())
+            }
+            )
+            setFilteredData(data)
         }
     }
 
     const handleSearchByDeveloperName = (e) => {
         if (e.key === 'Enter') {
             if (!searchByDeveloper) {
-                api.filter(result => { return result }
-                )
-            } else {
-                const data = api.filter(result =>
-                    result.developers?.some(developer => developer.toLowerCase().includes(searchByDeveloper?.toLowerCase()))
-                )
-                setFilteredData(data)
+                return api
             }
-        }
-    }
-
-    const handleOnclickScrumName = () => {
-        if (!searchByName) {
-            api.filter(result => { return result }
-            )
-        } else {
-            const data = api.filter(result => {
-                return result
-                    .scrumMasterName.toLowerCase().includes(searchByName?.toLowerCase())
-            }
-            )
-            setFilteredData(data)
-        }
-    }
-
-    const handleOnclickDeveloperName = () => {
-        if (!searchByDeveloper) {
-            api.filter(result => { return result }
-            )
-        } else {
             const data = api.filter(result =>
                 result.developers?.some(developer => developer.toLowerCase().includes(searchByDeveloper?.toLowerCase()))
             )
             setFilteredData(data)
         }
     }
+
+    const handleOnclickScrumName = () => {
+        if (!searchByName) {
+            return api
+        }
+        const data = api.filter(result => {
+            return result
+                .scrumMasterName.toLowerCase().includes(searchByName?.toLowerCase())
+        })
+        setFilteredData(data)
+    }
+
+    const handleOnclickDeveloperName = () => {
+        if (!searchByDeveloper) {
+            return api
+        }
+        const data = api.filter(result =>
+            result.developers?.some(developer => developer.toLowerCase().includes(searchByDeveloper?.toLowerCase())))
+        setFilteredData(data)
+    }
+
     return (
         <div>
+            <ToastContainer />
             <div>
                 <PrimaryNav />
             </div>
@@ -90,7 +104,7 @@ const Home = () => {
                 <input type="text" className="w-[70%] p-2" placeholder="Search by developer" onChange={(e) => setSearchByDeveloper(e.target.value)} onKeyDown={handleSearchByDeveloperName} />
                 <button onClick={handleOnclickDeveloperName} className=" bg-blue-500 hover:bg-blue-700 text-white font-bold rounded px-4">Search</button>
             </div>
-            <AddProductButton />
+            <AddProductButton addProductToast={addProductToast} />
             <table className="shadow-lg bg-white w-full">
                 <thead>
                     <tr>
@@ -107,7 +121,7 @@ const Home = () => {
                 {filteredData.length
                     ? filteredData.map((data, key) => (
                         <tbody key={key}>
-                            <AllProducts
+                            <AllProducts productUpdatedToast={productUpdatedToast}
                                 data={data}
                                 index={key}
                             />
@@ -115,7 +129,7 @@ const Home = () => {
                     ))
                     : api?.map((data, key) => (
                         <tbody key={key}>
-                            <AllProducts
+                            <AllProducts productUpdatedToast={productUpdatedToast}
                                 data={data}
                                 index={key}
                             />

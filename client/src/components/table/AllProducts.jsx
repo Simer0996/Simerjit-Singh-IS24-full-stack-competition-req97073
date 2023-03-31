@@ -2,7 +2,7 @@ import React from 'react'
 import EditButton from '../button/EditButton'
 import DeleteButton from '../button/DeleteButton'
 
-const AllProducts = ({ data, index }) => {
+const AllProducts = ({ data, index, productUpdatedToast }) => {
     return (
         <tr key={index}>
             <td className="border px-6 py-2">{index + 1}</td>
@@ -14,7 +14,7 @@ const AllProducts = ({ data, index }) => {
             <td className="border px-6 py-2">{data.scrumMasterName}</td>
             <td className="border px-6 py-2">{data.startDate}</td>
             <td className="border px-6 py-2">{data.methodology}</td>
-            <td className="px-6 py-2 "><EditButton id={data.id} /><DeleteButton id={data.id} /></td>
+            <td className="px-6 py-2 "><EditButton productUpdatedToast={productUpdatedToast} id={data.id} /><DeleteButton id={data.id} /></td>
         </tr>
     )
 }

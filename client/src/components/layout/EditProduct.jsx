@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { updateProduct } from '../../handler/api'
 import EditProductForm from "../forms/EditProductForm"
 
-const EditProduct = ({ id }) => {
+const EditProduct = ({ id, productUpdatedToast }) => {
     const [productName, setProductName] = useState('')
     const [scrumMasterName, setScrumMasterName] = useState('')
     const [productOwnerName, setProductOwnerName] = useState('')
@@ -19,6 +19,7 @@ const EditProduct = ({ id }) => {
         updateProduct(id, { productName, scrumMasterName, productOwnerName, developers, methodology })
             .then(res => {
                 console.log(res)
+                productUpdatedToast()
             })
             .catch(err => console.log(err))
     }

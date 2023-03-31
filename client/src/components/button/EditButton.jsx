@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Modal from 'react-modal';
 import EditProduct from '../layout/EditProduct';
 
-const EditButton = ({ id }) => {
+const EditButton = ({ id, productUpdatedToast }) => {
     const [modalIsOpen, setIsOpen] = useState(false);
 
     const customStyles = {
@@ -20,7 +20,6 @@ const EditButton = ({ id }) => {
         setIsOpen(true);
     }
 
-
     function closeModal() {
         setIsOpen(false);
     }
@@ -34,7 +33,7 @@ const EditButton = ({ id }) => {
                 contentLabel="Edit Product"
                 ariaHideApp={false}
             >
-                <EditProduct id={id} />
+                <EditProduct id={id} productUpdatedToast={productUpdatedToast} />
             </Modal>
         </div>
     )

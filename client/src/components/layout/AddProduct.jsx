@@ -3,12 +3,12 @@ import { createProduct } from '../../handler/api'
 import AddProductForm from "../forms/AddProductForm"
 import { v4 as uuidv4 } from "uuid";
 
-const AddProduct = () => {
+const AddProduct = ({ addProductToast }) => {
 
     const [productName, setProductName] = useState('')
     const [scrumMasterName, setScrumMasterName] = useState('')
     const [productOwnerName, setProductOwnerName] = useState('')
-    const [developers, setDevelopers] = useState([""])
+    const [developers, setDevelopers] = useState([])
     const [startDate, setStartDate] = useState('')
     const [methodology, setMethodology] = useState('Agile')
 
@@ -22,7 +22,7 @@ const AddProduct = () => {
         const id = uuidv4();
         createProduct({ id, productName, scrumMasterName, productOwnerName, developers, startDate, methodology })
             .then(res => {
-                console.log(res)
+                addProductToast()
             })
             .catch(err => console.log(err))
     }
