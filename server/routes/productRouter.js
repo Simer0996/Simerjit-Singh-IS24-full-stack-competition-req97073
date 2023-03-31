@@ -39,15 +39,17 @@ router.get('/', getProducts);
  * @openapi
  * /api/products:
  *   post:
- *     tags:
- *       - products
- *     requestBody:
- *       required: true
- *       contents:
- *        application/json:
- *         schema:
- *           ref: '#/components/schemas/Product'
-
+ *       summary: Add a new product
+ *       description: Add a new product
+ *       requestBody:
+ *          required: true
+ *          content:
+ *             application/json:
+ *                  schema:
+ *                     $ref: '#/components/schemas/Product'
+ *       responses:
+ *         201:
+ *          description: Created
  */
 
 router.post('/', postProduct);
@@ -101,25 +103,23 @@ router.get('/:id', getProductById);
  * @openapi
  * /api/products/{id}}:
  *   patch:
- *     tags:
- *       - products
- *     responses:
- *       200:
- *         description: OK
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: OK
- *                 data:
- *                   type: array 
- *                   items: 
- *                     type: object
+ *       summary: Add a new product
+ *       description: Add a new product
+ *       parameters:
+ *         - name: id
+ *           in: path
+ *           required: true
+ *           description: The id of the product
+ *       requestBody:
+ *          required: true
+ *          content:
+ *             application/json:
+ *                  schema:
+ *                     $ref: '#/components/schemas/Product'
+ *       responses:
+ *         200:
+ *          description: updated 
  */
-
 router.patch('/:id', editProduct);
 
 
