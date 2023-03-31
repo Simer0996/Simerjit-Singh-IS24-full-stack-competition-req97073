@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { updateProduct } from '../../handler/api'
 import EditProductForm from "../forms/EditProductForm"
 
-const EditProduct = ({ id, data }) => {
+const EditProduct = ({ id }) => {
     const [productName, setProductName] = useState('')
     const [scrumMasterName, setScrumMasterName] = useState('')
     const [productOwnerName, setProductOwnerName] = useState('')

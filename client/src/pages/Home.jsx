@@ -9,7 +9,7 @@ const Home = () => {
     const [api, setApi] = useState([]);
     const [searchByName, setSearchByName] = useState();
     const [searchByDeveloper, setSearchByDeveloper] = useState();
-    const [filteredData, setFilteredData] = useState();
+    const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -24,16 +24,14 @@ const Home = () => {
 
     const handleSearchByScrumName = (e) => {
         if (e.key === 'Enter') {
-            if (searchByName === '' || searchByName === null || searchByName === undefined || searchByName.length <= 2) {
+            if (!searchByName) {
                 api.filter(result => { return result }
                 )
             } else {
-                const data = api
-
-                    ?.filter((value) => {
-                        return value.scrumMasterName.toLowerCase().includes(searchByName?.toLowerCase())
-                    }
-                    )
+                const data = api?.filter((value) => {
+                    return value.scrumMasterName.toLowerCase().includes(searchByName?.toLowerCase())
+                }
+                )
                 setFilteredData(data)
             }
         }
@@ -41,7 +39,7 @@ const Home = () => {
 
     const handleSearchByDeveloperName = (e) => {
         if (e.key === 'Enter') {
-            if (searchByDeveloper === '' || searchByDeveloper === null || searchByDeveloper === undefined || searchByDeveloper.length <= 2) {
+            if (!searchByDeveloper) {
                 api.filter(result => { return result }
                 )
             } else {
@@ -54,7 +52,7 @@ const Home = () => {
     }
 
     const handleOnclickScrumName = () => {
-        if (searchByName === '' || searchByName === null || searchByName === undefined || searchByName.length <= 2) {
+        if (!searchByName) {
             api.filter(result => { return result }
             )
         } else {
@@ -68,7 +66,7 @@ const Home = () => {
     }
 
     const handleOnclickDeveloperName = () => {
-        if (searchByDeveloper === '' || searchByDeveloper === null || searchByDeveloper === undefined || searchByDeveloper.length <= 2) {
+        if (!searchByDeveloper) {
             api.filter(result => { return result }
             )
         } else {
@@ -78,8 +76,6 @@ const Home = () => {
             setFilteredData(data)
         }
     }
-
-
     return (
         <div>
             <div>
@@ -108,8 +104,8 @@ const Home = () => {
                         <th className="bg-blue-100 border text-left px-8 py-4">Action</th>
                     </tr>
                 </thead>
-                {filteredData === undefined || null || ''
-                    ? api.map((data, key) => (
+                {filteredData.length
+                    ? filteredData.map((data, key) => (
                         <tbody key={key}>
                             <AllProducts
                                 data={data}
@@ -117,7 +113,7 @@ const Home = () => {
                             />
                         </tbody>
                     ))
-                    : filteredData?.map((data, key) => (
+                    : api?.map((data, key) => (
                         <tbody key={key}>
                             <AllProducts
                                 data={data}
