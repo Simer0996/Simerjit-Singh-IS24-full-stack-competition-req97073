@@ -33,6 +33,17 @@ const Home = () => {
         progress: undefined,
     });
 
+    const productDeletedToast = () => toast.success("Product deleted successfully!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+
+
     useEffect(() => {
         const interval = setInterval(() => {
             getProducts()
@@ -121,7 +132,7 @@ const Home = () => {
                 {filteredData.length
                     ? filteredData.map((data, key) => (
                         <tbody key={key}>
-                            <AllProducts productUpdatedToast={productUpdatedToast}
+                            <AllProducts productUpdatedToast={productUpdatedToast} productDeletedToast={productDeletedToast}
                                 data={data}
                                 index={key}
                             />
@@ -129,7 +140,7 @@ const Home = () => {
                     ))
                     : api?.map((data, key) => (
                         <tbody key={key}>
-                            <AllProducts productUpdatedToast={productUpdatedToast}
+                            <AllProducts productUpdatedToast={productUpdatedToast} productDeletedToast={productDeletedToast}
                                 data={data}
                                 index={key}
                             />

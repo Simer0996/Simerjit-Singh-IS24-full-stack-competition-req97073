@@ -1,12 +1,13 @@
 import React from 'react'
 import { deleteProduct } from '../../handler/api'
 
-const DeleteButton = ({ id }) => {
+const DeleteButton = ({ id, productDeletedToast }) => {
 
     const handleDelete = () => {
         deleteProduct(id)
             .then(res => {
                 console.log(res)
+                productDeletedToast()
             })
             .catch(err => console.log(err))
     }
