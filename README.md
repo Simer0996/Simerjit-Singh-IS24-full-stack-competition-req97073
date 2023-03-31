@@ -4,9 +4,9 @@ Competition: REQ97073
 # Testing Front-End
 # Getting Started with Create React App
 For Front-End i've used the yarn package manager for stable dependencies and version locking
- -- To install Yarn globally, 
- = State npm install yarn --global 
- = Although, the project can run using npm start, as i've locked the dependencies package.json file it may cause warnings.
+ - To install Yarn globally, 
+ - State npm install yarn --global 
+ - Although, the project can run using npm start, as i've locked the dependencies package.json file to fix potential warnings.
 
 ### To start the project 
 ### `yarn start`
