@@ -27,7 +27,7 @@ Your app is ready to be deployed!
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:8000/api/products]
+ http://localhost:8000/api/products to view the products
 
 ### `npm run build`
 
