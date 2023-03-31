@@ -95,13 +95,13 @@ const Home = () => {
             <div>
                 <PrimaryNav />
             </div>
-            <h1 className="text-4xl text-center p-5">Track Progress </h1>
+            <h1 className="text-4xl text-center p-5">Track a product</h1>
             <div className="flex justify-center">
                 <input type="text" className="w-[70%] p-2" placeholder="Search by Scrum master" onChange={(e) => setSearchByName(e.target.value)} onKeyDown={handleSearchByScrumName} />
                 <button onClick={handleOnclickScrumName} className=" bg-blue-500 hover:bg-blue-700 text-white font-bold rounded px-4">Search</button>
             </div>
             <div className="flex justify-center mt-3">
-                <input type="text" className="w-[70%] p-2" placeholder="Search by developer" onChange={(e) => setSearchByDeveloper(e.target.value)} onKeyDown={handleSearchByDeveloperName} />
+                <input type="text" className="w-[70%] p-2" placeholder="Search by Developer" onChange={(e) => setSearchByDeveloper(e.target.value)} onKeyDown={handleSearchByDeveloperName} />
                 <button onClick={handleOnclickDeveloperName} className=" bg-blue-500 hover:bg-blue-700 text-white font-bold rounded px-4">Search</button>
             </div>
             <AddProductButton addProductToast={addProductToast} />

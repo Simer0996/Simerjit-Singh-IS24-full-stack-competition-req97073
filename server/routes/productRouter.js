@@ -115,7 +115,17 @@ router.get('/:id', getProductById);
  *          content:
  *             application/json:
  *                  schema:
- *                     $ref: '#/components/schemas/Product'
+ *                     properties:
+ *                       productName:
+ *                         type: string
+ *                       productOwnerName:
+ *                         type: string
+ *                       developers:
+ *                         type: array
+ *                       scrumMasterName:
+ *                         type: string
+ *                       methodology:
+ *                        type: string
  *       responses:
  *         200:
  *          description: updated 
