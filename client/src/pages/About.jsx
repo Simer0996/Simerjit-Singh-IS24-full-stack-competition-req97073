@@ -26,7 +26,7 @@ const About = () => {
                     <p className="p-2"><span className="text-red-500 text-xl">Note:</span> The start date of the specific project/product will remain same</p>
                 </div>
                 <div className="p-5">
-                    <p className="text-xl">4: Bonus Feature:</p>
+                    <p className="text-xl">4: Additional Feature:</p>
                     <p className="p-3">In the app, the two search fields has been given for searching the specific product with respect to the Scrum master name and developer name</p>
                     <p className="p-2"><span className="text-red-500 text-xl">Note:</span> Whenever the name is inputted in the search field, Press Enter to proceed the search.</p>
                 </div>
